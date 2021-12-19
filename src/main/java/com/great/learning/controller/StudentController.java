@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.great.learning.entity.Student;
 import com.great.learning.service.StudentService;
 
-
 @Controller
 @RequestMapping("/students")
 public class StudentController {
@@ -28,15 +27,9 @@ public class StudentController {
 		String returnVal = "";
 
 		List<Student> theStudents = studentService.findAll();
-//		if (theStudents.size() > 0) {
-		// add to the spring model
+
 		theModel.addAttribute("Students", theStudents);
-//		returnVal= "list-Students";
-//		}
-//		else {
-//			returnVal= "error";
-//
-//		}
+
 		return "list-Students";
 	}
 
